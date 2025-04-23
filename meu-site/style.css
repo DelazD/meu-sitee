@@ -1,0 +1,351 @@
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Rolagem suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Paleta de cores */
+:root {
+  --fundo-principal: #0D1117;
+  --fundo-secundario: #161B22;
+  --texto-principal: #FFFFFF;
+  --verde-destaque: #e01284;
+  --azul-destaque: #6f14d6;
+  --cinza-suave: #f87305;
+  --branco-puro: #fff;
+}
+
+/* Corpo da página */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--fundo-principal);
+  color: var(--texto-principal);
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--fundo-secundario);
+  color: var(--texto-principal);
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 5px solid var(--verde-destaque);
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+nav a {
+  color: var(--texto-principal);
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--verde-destaque);
+}
+
+/* Seções */
+section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: var(--fundo-secundario);
+  border-bottom: 1px solid var(--cinza-suave);
+}
+
+section:nth-child(even) {
+  background-color: var(--fundo-principal);
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--fundo-secundario);
+  color: var(--texto-principal);
+  text-align: center;
+  padding: 20px;
+}
+
+/* Pop-up */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: var(--fundo-secundario);
+  padding: 30px 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%;
+  color: var(--texto-principal);
+}
+
+.popup-content h2 {
+  margin-bottom: 10px;
+}
+
+.popup-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--verde-destaque);
+  color: var(--branco-puro);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.popup-content button:hover {
+  background-color: var(--azul-destaque);
+}
+
+/* Estilo do formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--cinza-suave);
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: var(--fundo-principal);
+  color: var(--texto-principal);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: var(--verde-destaque);
+  color: var(--branco-puro);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: var(--azul-destaque);
+}
+
+/* Botão de voltar ao topo */
+#btn-topo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(145deg, var(--verde-destaque), var(--azul-destaque));
+  color: var(--branco-puro);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 0 15px var(--verde-destaque), 0 0 5px var(--azul-destaque);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn-topo svg {
+  width: 26px;
+  height: 26px;
+}
+
+#btn-topo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--azul-destaque), 0 0 8px var(--verde-destaque);
+}
+
+/* Títulos e parágrafos */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--verde-destaque);
+}
+
+p {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  color: var(--texto-principal);
+}
+
+/* Animação reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.ativo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--verde-destaque);
+  color: var(--branco-puro);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.btn-cta {
+  background-color: var(--fundo-secundario);
+  color: var(--verde-destaque);
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: var(--azul-destaque);
+  color: var(--branco-puro);
+}
+
+/* Benefícios */
+.beneficios {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: var(--fundo-principal);
+}
+
+.beneficios h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--verde-destaque);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--fundo-secundario);
+  border: 2px solid #e01284;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 300px;
+  flex: 1;
+  transition: transform 0.3s ease;
+  color: var(--texto-principal);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  color: var(--verde-destaque);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--cinza-suave);
+}
+
+/* Seção de Captura */
+.captura {
+  background-color: var(--fundo-secundario);
+  color: var(--texto-principal);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.captura h2 {
+  color: var(--verde-destaque);
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.captura p {
+  max-width: 600px;
+  margin: 0 auto 25px auto;
+  font-size: 1.1rem;
+}
+
+.captura form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.captura input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--cinza-suave);
+  border-radius: 5px;
+  background-color: var(--fundo-principal);
+  color: var(--texto-principal);
+  font-size: 16px;
+}
+
+.captura button {
+  padding: 12px 25px;
+  background-color: var(--verde-destaque);
+  color: var(--branco-puro);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.captura button:hover {
+  background-color: var(--azul-destaque);
+}
